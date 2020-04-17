@@ -1,18 +1,18 @@
 package com.compass.changelog.controller;
 
-import com.compass.changelog.service.MainService;
+import com.compass.changelog.service.ChangelogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class MainController {
+public class ChangelogController {
 
-  private final MainService service;
+  private final ChangelogService service;
 
   @Autowired
-  public MainController(MainService service) {
+  public ChangelogController(ChangelogService service) {
     this.service = service;
   }
 

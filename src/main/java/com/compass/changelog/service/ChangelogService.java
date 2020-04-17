@@ -5,7 +5,7 @@ import com.compass.changelog.util.MarkdownConverter;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MainService {
+public class ChangelogService {
 
   public String handle(String fileName) {
     String markdown = FileConverter.convertToString(fileName);
