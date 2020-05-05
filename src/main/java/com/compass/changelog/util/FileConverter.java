@@ -14,7 +14,7 @@ public class FileConverter {
 
     String markdown;
     try {
-      markdown = Files.lines(Paths.get(fileName)).collect(Collectors.joining());
+      markdown = Files.lines(Paths.get(fileName)).collect(Collectors.joining("\n"));
     } catch (IOException ex) {
       throw new RuntimeException("There was an error reading file");
     }
