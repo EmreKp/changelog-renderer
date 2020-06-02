@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Paths;
 import java.util.stream.Collectors;
+import org.springframework.core.io.ClassPathResource;
 
 public class FileConverter {
 
@@ -16,7 +17,9 @@ public class FileConverter {
 
     String markdown;
     try {
-      markdown = Files.lines(Paths.get(fileName)).collect(Collectors.joining("\n"));
+      markdown = Files
+          .lines(new ClassPathResource(fileName).getFile().toPath())
+          .collect(Collectors.joining("\n"));
     } catch (IOException | InvalidPathException ex) {
       throw new InvalidFileException();
     }
